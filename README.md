@@ -1,16 +1,7 @@
-# todo_app
+# Simple Todo App
 
-A new Flutter project.
+<p><i>Effortlessly organize your daily routine with our intuitive todo app! Seamlessly add and manage tasks to streamline your day-to-day schedule.<b> Stay on top of priorities, set reminders, and track progress effortlessly</b>b>. Simplify your life with easy categorization and customizable features that adapt to your unique needs. Experience productivity at its finest with our user-friendly interface. Download now and transform the way you manage your tasks!</i></p>
+<hr>
 
-## Getting Started
+![Screenshot_1702388393](https://github.com/DevByShahzaib/Simple-Todo-App/assets/108393358/d8e894b5-05d2-46dd-ac6e-9f283a63f112)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
