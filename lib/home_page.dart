@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(Icons.favorite_border_outlined),
+                          Icon(Icons.favorite),
                           SizedBox(
                             width: 5,
                           ),
@@ -108,7 +108,9 @@ class _HomeState extends State<Home> {
                                       element == contentend[index]);
                                 });
                               },
-                              icon: Icon(Icons.highlight_remove))
+                              icon: Icon(
+                                Icons.delete_forever_sharp,
+                              ))
                         ],
                       ),
                     ),
