@@ -9,8 +9,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
+  bool check = false;
   var num1 = TextEditingController();
   List<String> contentend = [];
+  var newcontentend = [];
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,6 +89,7 @@ class _HomeState extends State<Home> {
                                 spreadRadius: 2.0),
                           ]),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Icon(Icons.favorite_border_outlined),
                           SizedBox(
@@ -97,7 +100,15 @@ class _HomeState extends State<Home> {
                             contentend[index],
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
-                          ))
+                          )),
+                          IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  contentend.removeWhere((element) =>
+                                      element == contentend[index]);
+                                });
+                              },
+                              icon: Icon(Icons.highlight_remove))
                         ],
                       ),
                     ),
