@@ -10,7 +10,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   bool check = false;
-  var num1 = TextEditingController();
+  TextEditingController num1 = TextEditingController();
+  TextEditingController updateController = TextEditingController();
   List<String> contentend = [];
   var newcontentend = [];
 
@@ -101,16 +102,47 @@ class _HomeState extends State<Home> {
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
                           )),
-                          IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  contentend.removeWhere((element) =>
-                                      element == contentend[index]);
-                                });
-                              },
-                              icon: Icon(
-                                Icons.delete_forever_sharp,
-                              ))
+                          Wrap(
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    updateController.text = contentend[index];
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            title: Text('Update'),
+                                            content: TextField(
+                                              controller: updateController,
+                                            ),
+                                            actions: [
+                                              ElevatedButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      contentend[index] =
+                                                          updateController.text;
+                                                    });
+                                                    updateController.clear();
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Text('Update'))
+                                            ],
+                                          );
+                                        });
+                                  },
+                                  icon: Icon(Icons.edit)),
+                              IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      contentend.removeWhere((element) =>
+                                          element == contentend[index]);
+                                    });
+                                  },
+                                  icon: Icon(
+                                    Icons.delete_forever_sharp,
+                                  )),
+                            ],
+                          )
                         ],
                       ),
                     ),
